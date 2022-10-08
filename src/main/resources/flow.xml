@@ -1,0 +1,87 @@
+<flow>
+    <nodes>
+        <node id="s1" type="script">
+            <![CDATA[
+                defaultContext.setData("s1", "demo");
+            ]]>
+        </node>
+
+        <node id="s2" type="switch_script">
+            <![CDATA[
+                return _meta.tag;
+            ]]>
+        </node>
+
+        <node id="s3" type="if_script">
+            <![CDATA[
+                return Boolean.parseBoolean(_meta.tag);
+            ]]>
+        </node>
+
+        <node id="s4" type="while_script">
+            <![CDATA[
+                return true;
+            ]]>
+        </node>
+
+        <node id="s5" type="break_script">
+            <![CDATA[
+                def count_key = "count";
+                if (defaultContext.hasData(count_key)){
+                    def count = defaultContext.getData(count_key);
+                    if (count >= 3){
+                        return true;
+                    }else{
+                        defaultContext.setData(count_key, ++count);
+                        return false;
+                    }
+                }else{
+                    defaultContext.setData(count_key, 1);
+                    return false;
+                }
+            ]]>
+        </node>
+
+        <node id="s6" type="for_script">
+            <![CDATA[
+                return 3;
+            ]]>
+        </node>
+    </nodes>
+
+    <chain name="chain1">
+        THEN(
+            SWITCH(d.tag("b")).TO(a, b),
+            IF(e.tag("false"), c, a),
+            WHILE(g).DO(THEN(c, a)).BREAK(h),
+            FOR(f).DO(b)
+        );
+    </chain>
+
+    <chain name="chain2">
+        THEN(
+            SWITCH(s2.tag("s1")).TO(a, s1),
+            IF(s3.tag("false"), c, a),
+            WHILE(s4).DO(THEN(c, a)).BREAK(s5),
+            FOR(s6).DO(b)
+        );
+    </chain>
+
+    <chain name="chain3">
+        THEN(
+        SWITCH(decl_d.tag("decl_b")).TO(decl_a, decl_b),
+        IF(decl_e.tag("false"), decl_c, decl_a),
+        WHILE(decl_g).DO(THEN(decl_c, decl_a)).BREAK(decl_h),
+        FOR(decl_f).DO(decl_b)
+        );
+    </chain>
+
+    <chain name="chain4">
+        THEN(
+        SWITCH(mdecl_d.tag("mdecl_b")).TO(mdecl_a, mdecl_b),
+        IF(mdecl_e.tag("false"), mdecl_c, mdecl_a),
+        WHILE(mdecl_g).DO(THEN(mdecl_c, mdecl_a)).BREAK(mdecl_h),
+        FOR(mdecl_f).DO(mdecl_b)
+        );
+    </chain>
+</flow>
