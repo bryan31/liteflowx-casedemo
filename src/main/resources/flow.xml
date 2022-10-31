@@ -1,50 +1,51 @@
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
 <flow>
     <nodes>
-        <node id="s1" type="script">
+        <node id="s1" type="script" language="groovy">
             <![CDATA[
-                defaultContext.setData("s1", "demo");
+                defaultContext.setData("s1", "demo")
             ]]>
         </node>
 
-        <node id="s2" type="switch_script">
+        <node id="s2" type="switch_script" language="groovy">
             <![CDATA[
-                return _meta.tag;
+                return _meta.tag
             ]]>
         </node>
 
-        <node id="s3" type="if_script">
+        <node id="s3" type="if_script" language="groovy">
             <![CDATA[
-                return Boolean.parseBoolean(_meta.tag);
+                return Boolean.parseBoolean(_meta.tag)
             ]]>
         </node>
 
-        <node id="s4" type="while_script">
+        <node id="s4" type="while_script" language="groovy">
             <![CDATA[
-                return true;
+                return true
             ]]>
         </node>
 
-        <node id="s5" type="break_script">
+        <node id="s5" type="break_script" language="groovy">
             <![CDATA[
-                def count_key = "count";
+                def count_key = "count"
                 if (defaultContext.hasData(count_key)){
-                    def count = defaultContext.getData(count_key);
+                    def count = defaultContext.getData(count_key)
                     if (count >= 3){
-                        return true;
+                        return true
                     }else{
-                        defaultContext.setData(count_key, ++count);
-                        return false;
+                        defaultContext.setData(count_key, ++count)
+                        return false
                     }
                 }else{
-                    defaultContext.setData(count_key, 1);
-                    return false;
+                    defaultContext.setData(count_key, 1)
+                    return false
                 }
             ]]>
         </node>
 
-        <node id="s6" type="for_script">
+        <node id="s6" type="for_script" language="groovy">
             <![CDATA[
-                return 3;
+                return 3
             ]]>
         </node>
     </nodes>
