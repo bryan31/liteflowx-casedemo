@@ -26,5 +26,8 @@ public class LiteFlowRun implements CommandLineRunner {
 
         LiteflowResponse response4 = flowExecutor.execute2Resp("chain4");
         System.out.println(response4.isSuccess());
+
+        LiteflowResponse response5 = flowExecutor.execute2Resp("chain5");
+        System.out.println(response5.isSuccess());
     }
 }
