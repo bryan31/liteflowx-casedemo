@@ -1,0 +1,38 @@
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
+<flow>
+
+
+    <chain id="retry1">
+        THEN(a,b,c.retry(3));
+    </chain>
+
+    <chain id="retry2">
+        THEN(a,b,c.retry(3, "java.lang.NullPointerException"));
+    </chain>
+
+    <chain id="retry3">
+        THEN(a,b,c).retry(3);
+    </chain>
+
+    <chain id="retry4">
+        THEN(a,b,c).retry(3, "java.lang.NullPointerException");
+    </chain>
+
+    <chain id="retry5">
+        THEN(retry1.retry(3));
+    </chain>
+
+    <chain id="retry6">
+        THEN(retry1.retry(3, "java.lang.NullPointerException"));
+    </chain>
+
+    <chain id="retry7">
+        exp = THEN(a,b,c);
+        THEN(exp.retry(3));
+    </chain>
+
+    <chain id="retry8">
+        exp = THEN(a,b,c);
+        THEN(exp.retry(3, "java.lang.NullPointerException"));
+    </chain>
+</flow>

@@ -1,14 +1,14 @@
 package com.example.liteflowx.common.cmp;
 
 import com.yomahub.liteflow.annotation.LiteflowComponent;
-import com.yomahub.liteflow.core.NodeBreakComponent;
+import com.yomahub.liteflow.core.NodeBooleanComponent;
 import com.yomahub.liteflow.slot.DefaultContext;
 
 @LiteflowComponent("h")
-public class HCmp extends NodeBreakComponent {
+public class HCmp extends NodeBooleanComponent {
 
     @Override
-    public boolean processBreak() throws Exception {
+    public boolean processBoolean() throws Exception {
         DefaultContext context = this.getFirstContextBean();
         String count_key = "count";
         if (context.hasData(count_key)){

@@ -8,7 +8,6 @@ import com.yomahub.liteflow.enums.LiteFlowMethodEnum;
 import com.yomahub.liteflow.enums.NodeTypeEnum;
 
 @LiteflowComponent("decl_a")
-@LiteflowCmpDefine(NodeTypeEnum.COMMON)
 public class DeclACmp{
 
     @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS, nodeType = NodeTypeEnum.COMMON)

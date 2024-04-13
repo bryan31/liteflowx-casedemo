@@ -9,10 +9,9 @@ import com.yomahub.liteflow.enums.LiteFlowMethodEnum;
 import com.yomahub.liteflow.enums.NodeTypeEnum;
 
 @LiteflowComponent("decl_d")
-@LiteflowCmpDefine(NodeTypeEnum.SWITCH)
 public class DeclDCmp{
 
-    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_SWITCH)
+    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_SWITCH, nodeType = NodeTypeEnum.SWITCH)
     public String processSwitch(NodeComponent bindCmp) throws Exception {
         return bindCmp.getTag();
     }

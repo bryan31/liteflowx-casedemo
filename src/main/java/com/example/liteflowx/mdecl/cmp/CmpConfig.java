@@ -30,7 +30,7 @@ public class CmpConfig {
         return bindCmp.getTag();
     }
 
-    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_IF, nodeId = "mdecl_e", nodeType = NodeTypeEnum.IF)
+    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_BOOLEAN, nodeId = "mdecl_e", nodeType = NodeTypeEnum.BOOLEAN)
     public boolean processE(NodeComponent bindCmp) throws Exception {
         return Boolean.parseBoolean(bindCmp.getTag());
     }
@@ -40,12 +40,12 @@ public class CmpConfig {
         return 3;
     }
 
-    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_WHILE, nodeId = "mdecl_g", nodeType = NodeTypeEnum.WHILE)
+    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_BOOLEAN, nodeId = "mdecl_g", nodeType = NodeTypeEnum.BOOLEAN)
     public boolean processG(NodeComponent bindCmp) throws Exception {
         return true;
     }
 
-    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_BREAK, nodeId = "mdecl_h", nodeType = NodeTypeEnum.BREAK)
+    @LiteflowMethod(value = LiteFlowMethodEnum.PROCESS_BOOLEAN, nodeId = "mdecl_h", nodeType = NodeTypeEnum.BOOLEAN)
     public boolean processH(NodeComponent bindCmp) throws Exception {
         DefaultContext context = bindCmp.getFirstContextBean();
         String count_key = "count";

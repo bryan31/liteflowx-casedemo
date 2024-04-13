@@ -1,0 +1,12 @@
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
+<flow>
+
+    <chain id="base">
+        SER(a, {{0}}, {{1}});
+    </chain>
+
+    <chain id="implA" extends="base">
+        {{0}}=SER(c);
+        {{1}}=PAR(a,k);
+    </chain>
+</flow>

@@ -1,0 +1,36 @@
+<!DOCTYPE flow PUBLIC  "liteflow" "liteflow.dtd">
+<flow>
+
+    <chain id="route1">
+        <route>
+            AND(e.tag("true"), g)
+        </route>
+        <body>
+            THEN(a,b,c);
+        </body>
+    </chain>
+
+    <chain id="route2">
+        <route>
+            OR(e.tag("false"), g)
+        </route>
+        <body>
+            THEN(a,b,c);
+        </body>
+    </chain>
+
+    <chain id="route3">
+        <route>
+            NOT(g)
+        </route>
+        <body>
+            THEN(a,b,c);
+        </body>
+    </chain>
+
+    <chain id="with_body">
+        <body>
+            THEN(a,b,c);
+        </body>
+    </chain>
+</flow>

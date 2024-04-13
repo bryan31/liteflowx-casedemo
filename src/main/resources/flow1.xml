@@ -13,19 +13,19 @@
             ]]>
         </node>
 
-        <node id="s3" type="if_script" language="groovy">
+        <node id="s3" type="boolean_script" language="groovy">
             <![CDATA[
                 return Boolean.parseBoolean(_meta.tag)
             ]]>
         </node>
 
-        <node id="s4" type="while_script" language="groovy">
+        <node id="s4" type="boolean_script" language="groovy">
             <![CDATA[
                 return true
             ]]>
         </node>
 
-        <node id="s5" type="break_script" file="s5.groovy" language="groovy"/>
+        <node id="s5" type="boolean_script" file="s5.groovy" language="groovy"/>
 
         <node id="s6" type="for_script" language="groovy">
             <![CDATA[
