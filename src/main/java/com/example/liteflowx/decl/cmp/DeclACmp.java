@@ -14,4 +14,9 @@ public class DeclACmp{
     public void process(NodeComponent bindCmp) throws Exception {
 
     }
+
+    @LiteflowMethod(value = LiteFlowMethodEnum.IS_ACCESS)
+    public void isAccess(NodeComponent bindCmp) throws Exception {
+
+    }
 }
